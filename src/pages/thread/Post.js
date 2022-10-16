@@ -6,22 +6,26 @@ function Post({ post }) {
 
   return (
     <>
-      <div key={post.id} className='grid md:grid-cols-4 bg-slate-50 md:max-w-4xl justify-items-center p-3 border-2 border-red-900 rounded-sm'>
-        <div className='flex md:col-span-1 md:flex-col pt-3 justify-start items-center'>
-          <UserIcon className='w-14'/>
-          <p className='text-lg'>{post.author.username}</p>
-          <p className='text-sm'>{post.author.about}</p>
-          <p className='text-sm'>69 likes</p>
+      <div className='flex flex-col md:grid md:grid-cols-4 bg-slate-50  w-full justify-items-center p-3 border-2 border-red-900 rounded-sm'>
+        <div className='flex flex-row justify-around md:col-span-1 md:flex-col pt-3 md:justify-start items-center mb-6 md:mb-0'>
+          <div className='flex flex-col items-end'>
+            <UserIcon className='w-14'/>
+            <p className='text-lg'>{post.author.username}</p>
+          </div>
+          <div className='flex flex-col items-start'>
+            <p className='text-sm'>{post.author.about}</p>
+            <p className='text-sm'>69 likes</p>
+          </div>
         </div>
-        <div className='flex md:col-span-3 md:flex-col md:w-full justify-between md:max-w-xl'>
+        <div className='flex flex-col justify-between md:col-span-3 md:flex-col md:min-w-full md:max-w-xl'>
           <p className='text-left mb-4'>
             {post.contents}
           </p>
           <div className='flex md:flex-row justify-between'>
-            <p className='text-sm text-gray-600'>At: 29 Jan 1979 12:32</p>
+            <p className='text-sm text-gray-600'>{post.createdAt}</p>
             <div className='flex gap-3'>
-              <p className='text-sm'>{post.likes?.length}</p>
-              <HandThumbUpIcon className=' h-5'/>
+              <p className='text-sm cursor-pointer'>{post.likes?.length}</p>
+              <HandThumbUpIcon className='h-5 cursor-pointer'/>
             </div>
           </div>
         </div>

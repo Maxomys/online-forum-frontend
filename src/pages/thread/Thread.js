@@ -24,9 +24,9 @@ function Thread(props) {
 
   return (
     <>
-      <div className='flex flex-col items-center mt-20'>
+      <div className='flex flex-col items-center px-1 mt-20 max-w-6xl mx-auto'>
         {posts.map(post => (
-          <Post post={post}/>
+          <Post key={post.id} post={post}/>
         ))}
       </div>
     </>
