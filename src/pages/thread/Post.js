@@ -6,13 +6,13 @@ function Post({ post }) {
 
   return (
     <>
-      <div className='flex flex-col md:grid md:grid-cols-4 bg-slate-50  w-full justify-items-center p-3 border-2 border-red-900 rounded-sm'>
+      <div className='flex flex-col md:grid md:grid-cols-4 bg-slate-50 w-full justify-items-center p-3 border-2 border-red-900 rounded-sm'>
         <div className='flex flex-row justify-around md:col-span-1 md:flex-col pt-3 md:justify-start items-center mb-6 md:mb-0'>
           <div className='flex flex-col items-end'>
             <UserIcon className='w-14'/>
             <p className='text-lg'>{post.author.username}</p>
           </div>
-          <div className='flex flex-col items-start'>
+          <div className='flex flex-col items-center'>
             <p className='text-sm'>{post.author.about}</p>
             <p className='text-sm'>69 likes</p>
           </div>
